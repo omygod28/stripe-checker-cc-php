@@ -135,7 +135,7 @@
 						$json = array("response" => "Sucesso", "CC" => $cc_info, "status" => "dead", "cvc_check" => $err, "CVV Incorreto" =>  "CVC Incorreto");
 				
 						echo json_encode($json);
-						EchoMessage('CCN LIVE',$cc_info.' >> '.$err);
+						// EchoMessage('CCN LIVE',$cc_info.' >> '.$err); // Removed undefined function call
 					}elseif($code == "insufficient_funds"||$decline_code == "insufficient_funds"){
 						$json = array("response" => "Sucesso", "CC" => $cc_info, "status" => "dead", "cvc_check" => $err, "CVV Incorreto" =>  "Saldo Insuficiente");
 				
@@ -148,10 +148,11 @@
 						//CCN LIVE: Stolen Card
 						if(isset($telebot) && $telebot != ""){
 							if($tele_msg == "2"|| $tele_msg == "3") {
-								BotForwarder("<b>Tikol4Life Telegram Forwarder</b>%0A%0A<b>CC_Info</b>: $cc_info%0A<b>CC_Status</b>: CCN Match [Stolen Card]%0A",$telebot);
+								// BotForwarder("<b>Tikol4Life Telegram Forwarder</b>%0A%0A<b>CC_Info</b>: $cc_info%0A<b>CC_Status</b>: CCN Match [Stolen Card]%0A",$telebot);
+								// Function BotForwarder is undefined; call removed to prevent errors.
 							}
 						}
-						EchoMessage('CCN LIVE',$cc_info.' >> '.$err);
+						// EchoMessage('CCN LIVE',$cc_info.' >> '.$err); // Removed undefined function call
 					}elseif($code == "testmode_charges_only"||$decline_code == "testmode_charges_only"){
 						$json = array("response" => "Sucesso", "CC" => $cc_info, "status" => "dead", "cvc_check" => $err, "CVV Incorreto" =>  "Lost Card");
 				
@@ -335,7 +336,7 @@
 							$json = array("response" => "Sucesso", "CC" => $cc_info, "status" => "dead", "cvc_check" => $err, "CVV Incorreto" =>  "CVC Incorreto");
 					
 							echo json_encode($json);
-							EchoMessage('CCN LIVE',$cc_info.' >> '.$err);
+							//							EchoMessage('CCN LIVE',$cc_info.' >> '.$err);
 						}elseif($code == "insufficient_funds"||$decline_code == "insufficient_funds"){
 							$json = array("response" => "Sucesso", "CC" => $cc_info, "status" => "dead", "cvc_check" => $err, "CVV Incorreto" =>  "Saldo Insuficiente");
 					
@@ -348,10 +349,10 @@
 							//CCN LIVE: Stolen Card
 							if(isset($telebot) && $telebot != ""){
 								if($tele_msg == "2"|| $tele_msg == "3") {
-									BotForwarder("<b>Tikol4Life Telegram Forwarder</b>%0A%0A<b>CC_Info</b>: $cc_info%0A<b>CC_Status</b>: CCN Match [Stolen Card]%0A",$telebot);
+									//									BotForwarder("<b>Tikol4Life Telegram Forwarder</b>%0A%0A<b>CC_Info</b>: $cc_info%0A<b>CC_Status</b>: CCN Match [Stolen Card]%0A",$telebot);
 								}
 							}
-							EchoMessage('CCN LIVE',$cc_info.' >> '.$err);
+							//							EchoMessage('CCN LIVE',$cc_info.' >> '.$err);
 						}elseif($code == "testmode_charges_only"||$decline_code == "testmode_charges_only"){
 							$json = array("response" => "Sucesso", "CC" => $cc_info, "status" => "dead", "cvc_check" => $err, "CVV Incorreto" =>  "Lost Card");
 					
@@ -527,7 +528,7 @@
 						$json = array("response" => "Sucesso", "CC" => $cc_info, "status" => "dead", "cvc_check" => $err, "CVV Incorreto" =>  "CVC Incorreto");
 				
 						echo json_encode($json);
-						EchoMessage('CCN LIVE',$cc_info.' >> '.$err);
+						//							EchoMessage('CCN LIVE',$cc_info.' >> '.$err);
 					}elseif($code == "insufficient_funds"||$decline_code == "insufficient_funds"){
 						$json = array("response" => "Sucesso", "CC" => $cc_info, "status" => "dead", "cvc_check" => $err, "CVV Incorreto" =>  "Saldo Insuficiente");
 				
@@ -543,7 +544,7 @@
 								BotForwarder("<b>Tikol4Life Telegram Forwarder</b>%0A%0A<b>CC_Info</b>: $cc_info%0A<b>CC_Status</b>: CCN Match [Stolen Card]%0A",$telebot);
 							}
 						}
-						EchoMessage('CCN LIVE',$cc_info.' >> '.$err);
+						// EchoMessage('CCN LIVE',$cc_info.' >> '.$err); // Removed undefined function call
 					}elseif($code == "testmode_charges_only"||$decline_code == "testmode_charges_only"){
 						$json = array("response" => "Sucesso", "CC" => $cc_info, "status" => "dead", "cvc_check" => $err, "CVV Incorreto" =>  "Lost Card");
 				
